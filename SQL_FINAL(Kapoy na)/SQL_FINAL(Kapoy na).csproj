@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAFEC66E-A989-44CD-AD85-62471E053596}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SQL_FINAL_Kapoy_na_</RootNamespace>
+    <AssemblyName>SQL_FINAL%28Kapoy na%29</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddS.Designer.cs">
+      <DependentUpon>AddS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSub.Designer.cs">
+      <DependentUpon>AddSub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddT.Designer.cs">
+      <DependentUpon>AddT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPass.Designer.cs">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGS.Designer.cs">
+      <DependentUpon>LOGS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentDash.Designer.cs">
+      <DependentUpon>StudentDash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects.Designer.cs">
+      <DependentUpon>Subjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherDash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherDash.Designer.cs">
+      <DependentUpon>TeacherDash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateS.Designer.cs">
+      <DependentUpon>UpdateS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateSub.Designer.cs">
+      <DependentUpon>UpdateSub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateT.Designer.cs">
+      <DependentUpon>UpdateT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="AddS.resx">
+      <DependentUpon>AddS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSub.resx">
+      <DependentUpon>AddSub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddT.resx">
+      <DependentUpon>AddT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPass.resx">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGS.resx">
+      <DependentUpon>LOGS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentDash.resx">
+      <DependentUpon>StudentDash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects.resx">
+      <DependentUpon>Subjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherDash.resx">
+      <DependentUpon>TeacherDash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateS.resx">
+      <DependentUpon>UpdateS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateSub.resx">
+      <DependentUpon>UpdateSub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateT.resx">
+      <DependentUpon>UpdateT.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Pass - Copy.png" />
+    <Content Include="Resources\Pass.png" />
+    <Content Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
