@@ -1,6 +1,6 @@
 ﻿namespace SQL_FINAL_Kapoy_na_
 {
-    partial class ForgotPass
+    partial class RenewPassword
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPass));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenewPassword));
             this.label1 = new System.Windows.Forms.Label();
             this.cbShowPass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();

@@ -13,10 +13,10 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class TeacherDash : Form
+    public partial class TeacherDashboard : Form
     {
         string connectionString = ConnectionString.conn;
-        public TeacherDash()
+        public TeacherDashboard()
         {
             InitializeComponent();
             dgvTeachers.CurrentCellDirtyStateChanged += dgvTeachers_CurrentCellDirtyStateChanged;
@@ -114,7 +114,7 @@ namespace SQL_FINAL_Kapoy_na_
         }
         private void Student()
         {
-            StudentDash studentDash = new StudentDash();
+            StudentDashboard studentDash = new StudentDashboard();
             studentDash.Show();
             this.Hide();
         }
@@ -122,19 +122,19 @@ namespace SQL_FINAL_Kapoy_na_
         private void Teacher()
         {
             this.Hide();
-            TeacherDash teacherDash = new TeacherDash();
+            TeacherDashboard teacherDash = new TeacherDashboard();
             teacherDash.Show();
         }
         private void Subject()
         {
-            Subjects sUBJECT = new Subjects();
+            SubjectsDashboard sUBJECT = new SubjectsDashboard();
             sUBJECT.Show();
             this.Hide();
         }
 
         private void Logs()
         {
-            LOGS lOGS = new LOGS();
+            Logs lOGS = new Logs();
             lOGS.Show();
             this.Hide();
         }
@@ -184,7 +184,7 @@ namespace SQL_FINAL_Kapoy_na_
             UserSession.LastName = null;
             UserSession.ProfilePath = null;
 
-            LOGIN login = new LOGIN();
+            Login login = new Login();
             login.Show();
             this.Hide();
         }
@@ -207,7 +207,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void Add()
         {
-            AddT add = new AddT();
+            AddTeachers add = new AddTeachers();
             add.ShowDialog();
             LoadTeachers();
             CountTeachers();
@@ -224,7 +224,7 @@ namespace SQL_FINAL_Kapoy_na_
             DataGridViewRow row = dgvTeachers.SelectedRows[0];
             int teacherID = Convert.ToInt32(row.Cells["TeacherID"].Value);
 
-            UpdateT update = new UpdateT(
+            UpdateTeachers update = new UpdateTeachers(
                 teacherID,
                 row.Cells["FirstName"].Value.ToString(),
                 row.Cells["LastName"].Value.ToString(),

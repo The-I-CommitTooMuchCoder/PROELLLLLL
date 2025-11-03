@@ -12,11 +12,11 @@ using System.Windows.Forms;
 namespace SQL_FINAL_Kapoy_na_
 {
     
-    public partial class UpdateS : Form
+    public partial class UpdateStudents : Form
     {
         string connectionString = @"Data Source=DESKTOP-IBHAJPM\SQLEXPRESS;Initial Catalog=FINAL_DB;Integrated Security=True";
         int studentID;
-        public UpdateS(int id)
+        public UpdateStudents(int id)
         {
             InitializeComponent();
             studentID = id;
@@ -94,7 +94,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void lblBack_Click(object sender, EventArgs e)
         {
-            StudentDash studentDash = new StudentDash();
+            StudentDashboard studentDash = new StudentDashboard();
             studentDash.Show();
             this.Close();
         }

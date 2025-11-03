@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class AddSub : Form
+    public partial class AddSubjects : Form
     {
-        public AddSub()
+        public AddSubjects()
         {
             InitializeComponent();
             LoadTeachers();

@@ -53,23 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddS.cs">
+    <Compile Include="AddStudents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddS.Designer.cs">
-      <DependentUpon>AddS.cs</DependentUpon>
+    <Compile Include="AddStudents.Designer.cs">
+      <DependentUpon>AddStudents.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSub.cs">
+    <Compile Include="AddSubjects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSub.Designer.cs">
-      <DependentUpon>AddSub.cs</DependentUpon>
+    <Compile Include="AddSubjects.Designer.cs">
+      <DependentUpon>AddSubjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddT.cs">
+    <Compile Include="AddTeachers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddT.Designer.cs">
-      <DependentUpon>AddT.cs</DependentUpon>
+    <Compile Include="AddTeachers.Designer.cs">
+      <DependentUpon>AddTeachers.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Dashboard.cs">
@@ -78,23 +78,23 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForgotPass.cs">
+    <Compile Include="RenewPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgotPass.Designer.cs">
-      <DependentUpon>ForgotPass.cs</DependentUpon>
+    <Compile Include="RenewPassword.Designer.cs">
+      <DependentUpon>RenewPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="LOGIN.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LOGIN.Designer.cs">
-      <DependentUpon>LOGIN.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="LOGS.cs">
+    <Compile Include="Logs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LOGS.Designer.cs">
-      <DependentUpon>LOGS.cs</DependentUpon>
+    <Compile Include="Logs.Designer.cs">
+      <DependentUpon>Logs.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,63 +109,63 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentDash.cs">
+    <Compile Include="StudentDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentDash.Designer.cs">
-      <DependentUpon>StudentDash.cs</DependentUpon>
+    <Compile Include="StudentDashboard.Designer.cs">
+      <DependentUpon>StudentDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Subjects.cs">
+    <Compile Include="SubjectsDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Subjects.Designer.cs">
-      <DependentUpon>Subjects.cs</DependentUpon>
+    <Compile Include="SubjectsDashboard.Designer.cs">
+      <DependentUpon>SubjectsDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherDash.cs">
+    <Compile Include="TeacherDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeacherDash.Designer.cs">
-      <DependentUpon>TeacherDash.cs</DependentUpon>
+    <Compile Include="TeacherDashboard.Designer.cs">
+      <DependentUpon>TeacherDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateS.cs">
+    <Compile Include="UpdateStudents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateS.Designer.cs">
-      <DependentUpon>UpdateS.cs</DependentUpon>
+    <Compile Include="UpdateStudents.Designer.cs">
+      <DependentUpon>UpdateStudents.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateSub.cs">
+    <Compile Include="UpdateSubjects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateSub.Designer.cs">
-      <DependentUpon>UpdateSub.cs</DependentUpon>
+    <Compile Include="UpdateSubjects.Designer.cs">
+      <DependentUpon>UpdateSubjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateT.cs">
+    <Compile Include="UpdateTeachers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateT.Designer.cs">
-      <DependentUpon>UpdateT.cs</DependentUpon>
+    <Compile Include="UpdateTeachers.Designer.cs">
+      <DependentUpon>UpdateTeachers.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="AddS.resx">
-      <DependentUpon>AddS.cs</DependentUpon>
+    <EmbeddedResource Include="AddStudents.resx">
+      <DependentUpon>AddStudents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddSub.resx">
-      <DependentUpon>AddSub.cs</DependentUpon>
+    <EmbeddedResource Include="AddSubjects.resx">
+      <DependentUpon>AddSubjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddT.resx">
-      <DependentUpon>AddT.cs</DependentUpon>
+    <EmbeddedResource Include="AddTeachers.resx">
+      <DependentUpon>AddTeachers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForgotPass.resx">
-      <DependentUpon>ForgotPass.cs</DependentUpon>
+    <EmbeddedResource Include="RenewPassword.resx">
+      <DependentUpon>RenewPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LOGIN.resx">
-      <DependentUpon>LOGIN.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LOGS.resx">
-      <DependentUpon>LOGS.cs</DependentUpon>
+    <EmbeddedResource Include="Logs.resx">
+      <DependentUpon>Logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -175,23 +175,23 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentDash.resx">
-      <DependentUpon>StudentDash.cs</DependentUpon>
+    <EmbeddedResource Include="StudentDashboard.resx">
+      <DependentUpon>StudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Subjects.resx">
-      <DependentUpon>Subjects.cs</DependentUpon>
+    <EmbeddedResource Include="SubjectsDashboard.resx">
+      <DependentUpon>SubjectsDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherDash.resx">
-      <DependentUpon>TeacherDash.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherDashboard.resx">
+      <DependentUpon>TeacherDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateS.resx">
-      <DependentUpon>UpdateS.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateStudents.resx">
+      <DependentUpon>UpdateStudents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateSub.resx">
-      <DependentUpon>UpdateSub.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateSubjects.resx">
+      <DependentUpon>UpdateSubjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateT.resx">
-      <DependentUpon>UpdateT.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateTeachers.resx">
+      <DependentUpon>UpdateTeachers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

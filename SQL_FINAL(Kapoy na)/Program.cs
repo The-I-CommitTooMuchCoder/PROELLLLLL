@@ -16,7 +16,7 @@ namespace SQL_FINAL_Kapoy_na_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LOGIN());
+            Application.Run(new Login());
         }
     }
 }

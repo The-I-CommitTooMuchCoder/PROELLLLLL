@@ -1,5 +1,4 @@
-﻿CREATE DATABASE FINAL_DB;
-USE FINAL_DB;
+﻿USE FINAL_DB;
 
 CREATE TABLE Admins (
     AdminID INT IDENTITY(1,1) PRIMARY KEY,
@@ -88,6 +87,6 @@ VALUES (3, 2);
 
 SELECT * FROM Subjects
 
-Drop Procedure F_UpdateSubject ;
+
 DROP Table StudentSubjects;
 EXEC sp_rename 'Students.IsActive', 'Active', 'COLUMN';

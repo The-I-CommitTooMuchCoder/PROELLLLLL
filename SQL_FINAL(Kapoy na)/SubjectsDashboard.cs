@@ -12,9 +12,9 @@ using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class Subjects : Form
+    public partial class SubjectsDashboard : Form
     {
-        public Subjects()
+        public SubjectsDashboard()
         {
             InitializeComponent();
             dgvSubjects.CurrentCellDirtyStateChanged += dgvSubjects_CurrentCellDirtyStateChanged;
@@ -92,7 +92,7 @@ namespace SQL_FINAL_Kapoy_na_
                 UserSession.LastName = null;
                 UserSession.ProfilePath = null;
 
-                LOGIN login = new LOGIN();
+                Login login = new Login();
                 login.Show();
                 this.Hide();
             }
@@ -104,7 +104,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void Student()
         {
-            StudentDash studentDash = new StudentDash();
+            StudentDashboard studentDash = new StudentDashboard();
             studentDash.Show();
             this.Hide();
         }
@@ -112,19 +112,19 @@ namespace SQL_FINAL_Kapoy_na_
         private void Teacher()
         {
             this.Hide();
-            TeacherDash teacherDash = new TeacherDash();
+            TeacherDashboard teacherDash = new TeacherDashboard();
             teacherDash.Show();
         }
         private void Subject()
         {
-            Subjects sUBJECT = new Subjects();
+            SubjectsDashboard sUBJECT = new SubjectsDashboard();
             sUBJECT.Show();
             this.Hide();
         }
 
         private void Logs()
         {
-            LOGS lOGS = new LOGS();
+            Logs lOGS = new Logs();
             lOGS.Show();
             this.Hide();
         }
@@ -137,7 +137,7 @@ namespace SQL_FINAL_Kapoy_na_
             UserSession.LastName = null;
             UserSession.ProfilePath = null;
 
-            LOGIN login = new LOGIN();
+            Login login = new Login();
             login.Show();
             this.Hide();
         }
@@ -219,7 +219,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void Add()
         {
-            AddSub add = new AddSub();
+            AddSubjects add = new AddSubjects();
             add.ShowDialog();
             LoadSubjects();
             CountSubjects();
@@ -240,7 +240,7 @@ namespace SQL_FINAL_Kapoy_na_
             string studentName = dgvSubjects.SelectedRows[0].Cells["StudentName"].Value.ToString();
             bool active = Convert.ToBoolean(dgvSubjects.SelectedRows[0].Cells["Active"].Value);
 
-            UpdateSub upd = new UpdateSub(subjectID, code, name, teacherName, studentName);
+            UpdateSubjects upd = new UpdateSubjects(subjectID, code, name, teacherName, studentName);
             upd.ShowDialog();
             LoadSubjects();
 

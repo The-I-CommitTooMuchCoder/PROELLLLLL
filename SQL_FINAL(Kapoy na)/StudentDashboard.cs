@@ -13,9 +13,9 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class StudentDash : Form
+    public partial class StudentDashboard : Form
     {
-        public StudentDash()
+        public StudentDashboard()
         {
             InitializeComponent();
             dgvStudents.CurrentCellDirtyStateChanged += dgvStudents_CurrentCellDirtyStateChanged;
@@ -96,7 +96,7 @@ namespace SQL_FINAL_Kapoy_na_
                 UserSession.LastName = null;
                 UserSession.ProfilePath = null;
 
-                LOGIN login = new LOGIN();
+                Login login = new Login();
                 login.Show();
                 this.Hide();
             }
@@ -108,7 +108,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void Student()
         {
-            StudentDash studentDash = new StudentDash();
+            StudentDashboard studentDash = new StudentDashboard();
             studentDash.Show();
             this.Hide();
         }
@@ -116,19 +116,19 @@ namespace SQL_FINAL_Kapoy_na_
         private void Teacher()
         {
             this.Hide();
-            TeacherDash teacherDash = new TeacherDash();
+            TeacherDashboard teacherDash = new TeacherDashboard();
             teacherDash.Show();
         }
         private void Subject()
         {
-            Subjects sUBJECT = new Subjects();
+            SubjectsDashboard sUBJECT = new SubjectsDashboard();
             sUBJECT.Show();
             this.Hide();
         }
 
         private void Logs()
         {
-            LOGS lOGS = new LOGS();
+            Logs lOGS = new Logs();
             lOGS.Show();
             this.Hide();
         }
@@ -143,7 +143,7 @@ namespace SQL_FINAL_Kapoy_na_
 
             int studentID = Convert.ToInt32(dgvStudents.SelectedRows[0].Cells["StudentID"].Value);
 
-            UpdateS update = new UpdateS(studentID);
+            UpdateStudents update = new UpdateStudents(studentID);
             update.ShowDialog();
             LoadStudents();
         }
@@ -338,7 +338,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddS addStudent = new AddS();
+            AddStudents addStudent = new AddStudents();
             addStudent.Show();
             this.Hide();
         }

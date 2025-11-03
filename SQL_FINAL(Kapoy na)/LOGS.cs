@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class LOGS : Form
+    public partial class Logs : Form
     {
-        public LOGS()
+        public Logs()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace SQL_FINAL_Kapoy_na_
         string connectionString =ConnectionString.conn;
         private void Student()
         {
-            StudentDash studentDash = new StudentDash();
+            StudentDashboard studentDash = new StudentDashboard();
             studentDash.Show();
             this.Hide();
         }
@@ -30,19 +30,19 @@ namespace SQL_FINAL_Kapoy_na_
         private void Teacher()
         {
             this.Hide();
-            TeacherDash teacherDash = new TeacherDash();
+            TeacherDashboard teacherDash = new TeacherDashboard();
             teacherDash.Show();
         }
         private void Subject()
         {
-            Subjects sUBJECT = new Subjects();
+            SubjectsDashboard sUBJECT = new SubjectsDashboard();
             sUBJECT.Show();
             this.Hide();
         }
 
         private void Logs()
         {
-            LOGS lOGS = new LOGS();
+            Logs lOGS = new Logs();
             lOGS.Show();
             this.Hide();
         }
@@ -53,7 +53,7 @@ namespace SQL_FINAL_Kapoy_na_
             UserSession.LastName = null;
             UserSession.ProfilePath = null;
 
-            LOGIN login = new LOGIN();
+            Login login = new Login();
             login.Show();
             this.Hide();
         }

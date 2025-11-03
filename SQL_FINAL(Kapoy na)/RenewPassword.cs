@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class ForgotPass : Form
+    public partial class RenewPassword : Form
     {
-        public ForgotPass()
+        public RenewPassword()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void label2_Click(object sender, EventArgs e)
         {
-            LOGIN lOGIN = new LOGIN();
+            Login lOGIN = new Login();
             lOGIN.Show();
             this.Hide();
         }
@@ -59,7 +59,7 @@ namespace SQL_FINAL_Kapoy_na_
                     MessageBox.Show("Password reset successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Back to Login Form
-                    LOGIN lOGIN = new LOGIN();
+                    Login lOGIN = new Login();
                     lOGIN.Show();
                     this.Hide();
                 }

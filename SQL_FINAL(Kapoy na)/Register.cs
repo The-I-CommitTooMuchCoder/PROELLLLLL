@@ -84,7 +84,7 @@ namespace SQL_FINAL_Kapoy_na_
                     MessageBox.Show("Admin registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Go back to login form
-                    LOGIN lOGIN = new LOGIN();
+                    Login lOGIN = new Login();
                     lOGIN.Show();
                     this.Hide();
                 }
@@ -98,7 +98,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            LOGIN lOGIN = new LOGIN();
+            Login lOGIN = new Login();
             lOGIN.Show();
             this.Hide();
         }

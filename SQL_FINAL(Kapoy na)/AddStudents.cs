@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class AddS : Form
+    public partial class AddStudents : Form
     {
-        public AddS()
+        public AddStudents()
         {
             InitializeComponent();
         }
@@ -117,7 +117,7 @@ namespace SQL_FINAL_Kapoy_na_
         private void label12_Click(object sender, EventArgs e)
         {
             this.Hide();
-            StudentDash sd = new StudentDash();
+            StudentDashboard sd = new StudentDashboard();
             sd.Show();
         }
     }

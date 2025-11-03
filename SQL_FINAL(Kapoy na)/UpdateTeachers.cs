@@ -12,12 +12,12 @@ using System.Xml.Linq;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class UpdateT : Form
+    public partial class UpdateTeachers : Form
     {
         int teacherID;
         string connectionString = @"Data Source=DESKTOP-IBHAJPM\SQLEXPRESS;Initial Catalog=FINAL_DB;Integrated Security=True";
 
-        public UpdateT(int id, string fname, string lname, string gender, string dept, string subj, string user, string pass)
+        public UpdateTeachers(int id, string fname, string lname, string gender, string dept, string subj, string user, string pass)
         {
             InitializeComponent();
             teacherID = id;

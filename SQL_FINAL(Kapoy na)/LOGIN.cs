@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class LOGIN : Form
+    public partial class Login : Form
     {
         int attempts = 0;
-        public LOGIN()
+        public Login()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace SQL_FINAL_Kapoy_na_
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            ForgotPass forgot = new ForgotPass();
+            RenewPassword forgot = new RenewPassword();
             forgot.Show();
         }
 

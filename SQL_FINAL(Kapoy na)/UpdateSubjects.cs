@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace SQL_FINAL_Kapoy_na_
 {
-    public partial class UpdateSub : Form
+    public partial class UpdateSubjects : Form
     {
         int subjectID;
         string connectionString = @"Data Source=DESKTOP-IBHAJPM\SQLEXPRESS;Initial Catalog=FINAL_DB;Integrated Security=True";
 
-        public UpdateSub(int id, string code, string name, string teacherName, string studentName)
+        public UpdateSubjects(int id, string code, string name, string teacherName, string studentName)
         {
             InitializeComponent();
             subjectID = id;          
