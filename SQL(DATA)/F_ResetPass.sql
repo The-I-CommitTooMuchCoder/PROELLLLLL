@@ -18,9 +18,10 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE F_ResetPass
+ALTER PROCEDURE F_ResetPass
     @Username NVARCHAR(50),
-    @NewPassword NVARCHAR(100)
+    @NewPassword NVARCHAR(100),
+    @Result INT OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -31,11 +32,11 @@ BEGIN
         SET [Password] = @NewPassword
         WHERE Username = @Username;
 
-        PRINT 'Password updated successfully!';
+        SET @Result = 1; -- Success
     END
     ELSE
     BEGIN
-        RAISERROR('Invalid username. Please try again.', 16, 1);
+        SET @Result = 0; -- Username not found
     END
 END
 GO

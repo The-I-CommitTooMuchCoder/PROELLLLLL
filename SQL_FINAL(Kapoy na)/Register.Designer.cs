@@ -42,12 +42,12 @@
             this.gBoxIdentity = new System.Windows.Forms.GroupBox();
             this.gBoxContacts = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbShowPass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.cbShowPass = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Profilepic)).BeginInit();
             this.gBoxIdentity.SuspendLayout();
             this.gBoxContacts.SuspendLayout();
@@ -332,6 +332,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account";
             // 
+            // cbShowPass
+            // 
+            this.cbShowPass.AutoSize = true;
+            this.cbShowPass.CheckedState.BorderColor = System.Drawing.Color.DarkBlue;
+            this.cbShowPass.CheckedState.BorderRadius = 100;
+            this.cbShowPass.CheckedState.BorderThickness = 1;
+            this.cbShowPass.CheckedState.FillColor = System.Drawing.Color.SlateBlue;
+            this.cbShowPass.CheckMarkColor = System.Drawing.Color.LavenderBlush;
+            this.cbShowPass.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.cbShowPass.ForeColor = System.Drawing.Color.White;
+            this.cbShowPass.Location = new System.Drawing.Point(198, 134);
+            this.cbShowPass.Name = "cbShowPass";
+            this.cbShowPass.Size = new System.Drawing.Size(101, 17);
+            this.cbShowPass.TabIndex = 95;
+            this.cbShowPass.Text = "Show Password";
+            this.cbShowPass.UncheckedState.BorderColor = System.Drawing.Color.DarkBlue;
+            this.cbShowPass.UncheckedState.BorderRadius = 100;
+            this.cbShowPass.UncheckedState.BorderThickness = 1;
+            this.cbShowPass.UncheckedState.FillColor = System.Drawing.Color.SlateBlue;
+            this.cbShowPass.CheckStateChanged += new System.EventHandler(this.cbShowPass_CheckStateChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label1);
@@ -397,6 +418,7 @@
             this.btnClear.Size = new System.Drawing.Size(161, 45);
             this.btnClear.TabIndex = 99;
             this.btnClear.Text = "CLEAR";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
             this.btnClear.MouseHover += new System.EventHandler(this.btnClear_MouseHover);
             // 
@@ -419,27 +441,6 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(761, 553);
             this.guna2CustomGradientPanel1.TabIndex = 100;
-            // 
-            // cbShowPass
-            // 
-            this.cbShowPass.AutoSize = true;
-            this.cbShowPass.CheckedState.BorderColor = System.Drawing.Color.DarkBlue;
-            this.cbShowPass.CheckedState.BorderRadius = 100;
-            this.cbShowPass.CheckedState.BorderThickness = 1;
-            this.cbShowPass.CheckedState.FillColor = System.Drawing.Color.SlateBlue;
-            this.cbShowPass.CheckMarkColor = System.Drawing.Color.LavenderBlush;
-            this.cbShowPass.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.cbShowPass.ForeColor = System.Drawing.Color.White;
-            this.cbShowPass.Location = new System.Drawing.Point(198, 134);
-            this.cbShowPass.Name = "cbShowPass";
-            this.cbShowPass.Size = new System.Drawing.Size(101, 17);
-            this.cbShowPass.TabIndex = 95;
-            this.cbShowPass.Text = "Show Password";
-            this.cbShowPass.UncheckedState.BorderColor = System.Drawing.Color.DarkBlue;
-            this.cbShowPass.UncheckedState.BorderRadius = 100;
-            this.cbShowPass.UncheckedState.BorderThickness = 1;
-            this.cbShowPass.UncheckedState.FillColor = System.Drawing.Color.SlateBlue;
-            this.cbShowPass.CheckStateChanged += new System.EventHandler(this.cbShowPass_CheckStateChanged);
             // 
             // Register
             // 

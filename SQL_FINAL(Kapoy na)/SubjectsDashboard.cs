@@ -26,39 +26,59 @@ namespace SQL_FINAL_Kapoy_na_
         int shownX;
         int hiddenX;
         int slideSpeed = 12; // pixels per tick (adjust for smoothness)
-        private void ExportToWord(string columnName)
+        private void ExportToWord()
         {
             try
             {
+                // Create Word app & document
                 Word.Application wordApp = new Word.Application();
                 Word.Document doc = wordApp.Documents.Add();
 
                 // Add title
                 Word.Paragraph header = doc.Content.Paragraphs.Add();
-                header.Range.Text = $"Data from column: {columnName}";
+                header.Range.Text = "Active Students";
                 header.Range.Font.Bold = 1;
-                header.Range.Font.Size = 14;
+                header.Range.Font.Size = 11;
                 header.Range.InsertParagraphAfter();
 
-                // Add table with 1 column
-                int rowCount = dgvSubjects.Rows.Count - 1; // minus new row
-                Word.Table table = doc.Tables.Add(header.Range, rowCount + 1, 1);
+                // Get visible (bound) columns count
+                int colCount = dgvSubjects.Columns.Count;
+
+                // Filter only active rows
+                var activeRows = dgvSubjects.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => !r.IsNewRow && Convert.ToBoolean(r.Cells["Active"].Value) == true)
+                    .ToList();
+
+                if (activeRows.Count == 0)
+                {
+                    MessageBox.Show("No active students found to export.");
+                    return;
+                }
+
+                // Add table (rows + header)
+                Word.Table table = doc.Tables.Add(header.Range, activeRows.Count + 1, colCount);
                 table.Borders.Enable = 1;
 
                 // Header row
-                table.Cell(1, 1).Range.Text = columnName;
-                table.Cell(1, 1).Range.Bold = 1;
-
-                // Fill rows
-                int rowIndex = 2;
-                foreach (DataGridViewRow row in dgvSubjects.Rows)
+                for (int c = 0; c < colCount; c++)
                 {
-                    if (row.IsNewRow) continue;
+                    table.Cell(1, c + 1).Range.Text = dgvSubjects.Columns[c].HeaderText;
+                    table.Cell(1, c + 1).Range.Bold = 1;
+                }
 
-                    table.Cell(rowIndex, 1).Range.Text = row.Cells[columnName].Value?.ToString();
+                // Fill rows with data
+                int rowIndex = 2;
+                foreach (DataGridViewRow row in activeRows)
+                {
+                    for (int c = 0; c < colCount; c++)
+                    {
+                        table.Cell(rowIndex, c + 1).Range.Text = row.Cells[c].Value?.ToString() ?? "";
+                    }
                     rowIndex++;
                 }
 
+                // Show Word document
                 wordApp.Visible = true;
             }
             catch (Exception ex)
@@ -69,7 +89,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void Subjects_Load(object sender, EventArgs e)
         {
-            lblName.Text = $"{UserSession.FirstName} {UserSession.LastName}";
+            lblSubS.Text = $"{UserSession.FirstName} {UserSession.LastName}";
 
             if (!string.IsNullOrEmpty(UserSession.ProfilePath) && File.Exists(UserSession.ProfilePath))
             {
@@ -335,8 +355,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            string selectedColumn = dgvSubjects.SelectedCells[0].OwningColumn.Name;
-            ExportToWord(selectedColumn);
+            ExportToWord();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -377,6 +396,13 @@ namespace SQL_FINAL_Kapoy_na_
         private void pBoxExit_Click(object sender, EventArgs e)
         {
             Logout();
+        }
+
+        private void btndashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard dsh = new Dashboard();
+            dsh.Show();
+            this.Hide();
         }
     }
 }

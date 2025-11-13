@@ -18,7 +18,7 @@ namespace SQL_FINAL_Kapoy_na_
             InitializeComponent();
         }
         
-        string connectionString = @"Data Source=DESKTOP-IBHAJPM\SQLEXPRESS;Initial Catalog=FINAL_DB;Integrated Security=True";
+        string connectionString = ConnectionString.conn;
 
         private void btnSave_Click(object sender, EventArgs e)
         {

@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pIcons = new System.Windows.Forms.Panel();
             this.btnToggle = new Guna.UI2.WinForms.Guna2Button();
             this.pBoxExit = new System.Windows.Forms.PictureBox();
@@ -201,7 +201,7 @@
             this.btnLogOutD.FillColor = System.Drawing.Color.Transparent;
             this.btnLogOutD.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnLogOutD.ForeColor = System.Drawing.Color.Tomato;
-            this.btnLogOutD.Location = new System.Drawing.Point(5, 500);
+            this.btnLogOutD.Location = new System.Drawing.Point(3, 500);
             this.btnLogOutD.Name = "btnLogOutD";
             this.btnLogOutD.Size = new System.Drawing.Size(134, 51);
             this.btnLogOutD.TabIndex = 24;
@@ -220,7 +220,7 @@
             this.btnLogsD.FillColor = System.Drawing.Color.Transparent;
             this.btnLogsD.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnLogsD.ForeColor = System.Drawing.Color.White;
-            this.btnLogsD.Location = new System.Drawing.Point(5, 364);
+            this.btnLogsD.Location = new System.Drawing.Point(3, 364);
             this.btnLogsD.Name = "btnLogsD";
             this.btnLogsD.Size = new System.Drawing.Size(134, 51);
             this.btnLogsD.TabIndex = 23;
@@ -239,7 +239,7 @@
             this.btnSubjectD.FillColor = System.Drawing.Color.Transparent;
             this.btnSubjectD.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnSubjectD.ForeColor = System.Drawing.Color.White;
-            this.btnSubjectD.Location = new System.Drawing.Point(5, 296);
+            this.btnSubjectD.Location = new System.Drawing.Point(3, 296);
             this.btnSubjectD.Name = "btnSubjectD";
             this.btnSubjectD.Size = new System.Drawing.Size(134, 51);
             this.btnSubjectD.TabIndex = 22;
@@ -258,7 +258,7 @@
             this.btnTeacherD.FillColor = System.Drawing.Color.Transparent;
             this.btnTeacherD.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnTeacherD.ForeColor = System.Drawing.Color.White;
-            this.btnTeacherD.Location = new System.Drawing.Point(5, 228);
+            this.btnTeacherD.Location = new System.Drawing.Point(3, 228);
             this.btnTeacherD.Name = "btnTeacherD";
             this.btnTeacherD.Size = new System.Drawing.Size(134, 51);
             this.btnTeacherD.TabIndex = 21;
@@ -277,7 +277,7 @@
             this.btnStudentD.FillColor = System.Drawing.Color.Transparent;
             this.btnStudentD.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnStudentD.ForeColor = System.Drawing.Color.White;
-            this.btnStudentD.Location = new System.Drawing.Point(5, 160);
+            this.btnStudentD.Location = new System.Drawing.Point(3, 160);
             this.btnStudentD.Name = "btnStudentD";
             this.btnStudentD.Size = new System.Drawing.Size(134, 51);
             this.btnStudentD.TabIndex = 20;
@@ -291,7 +291,7 @@
             this.btndashboard.FlatAppearance.BorderSize = 0;
             this.btndashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndashboard.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndashboard.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btndashboard.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.btndashboard.Location = new System.Drawing.Point(13, 21);
             this.btndashboard.Name = "btndashboard";
             this.btndashboard.Size = new System.Drawing.Size(115, 28);
@@ -326,23 +326,23 @@
             this.chartStudents.BackColor = System.Drawing.Color.LightGray;
             this.chartStudents.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.VerticalCenter;
             this.chartStudents.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            chartArea3.Name = "ChartArea1";
-            this.chartStudents.ChartAreas.Add(chartArea3);
-            legend3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend3.ForeColor = System.Drawing.Color.White;
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            this.chartStudents.Legends.Add(legend3);
+            chartArea9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
+            chartArea9.Name = "ChartArea1";
+            this.chartStudents.ChartAreas.Add(chartArea9);
+            legend9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
+            legend9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend9.ForeColor = System.Drawing.Color.White;
+            legend9.IsTextAutoFit = false;
+            legend9.Name = "Legend1";
+            this.chartStudents.Legends.Add(legend9);
             this.chartStudents.Location = new System.Drawing.Point(510, 160);
             this.chartStudents.Name = "chartStudents";
             this.chartStudents.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartStudents.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chartStudents.Series.Add(series9);
             this.chartStudents.Size = new System.Drawing.Size(284, 290);
             this.chartStudents.TabIndex = 13;
             this.chartStudents.Text = "chart1";
@@ -352,23 +352,23 @@
             this.chartTeachers.BackColor = System.Drawing.Color.Silver;
             this.chartTeachers.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.VerticalCenter;
             this.chartTeachers.BorderlineColor = System.Drawing.Color.Gainsboro;
-            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            chartArea4.Name = "ChartArea1";
-            this.chartTeachers.ChartAreas.Add(chartArea4);
-            legend4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            legend4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend4.ForeColor = System.Drawing.Color.White;
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Legend1";
-            this.chartTeachers.Legends.Add(legend4);
+            chartArea10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
+            chartArea10.Name = "ChartArea1";
+            this.chartTeachers.ChartAreas.Add(chartArea10);
+            legend10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
+            legend10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend10.ForeColor = System.Drawing.Color.White;
+            legend10.IsTextAutoFit = false;
+            legend10.Name = "Legend1";
+            this.chartTeachers.Legends.Add(legend10);
             this.chartTeachers.Location = new System.Drawing.Point(149, 160);
             this.chartTeachers.Name = "chartTeachers";
             this.chartTeachers.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartTeachers.Series.Add(series4);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chartTeachers.Series.Add(series10);
             this.chartTeachers.Size = new System.Drawing.Size(284, 290);
             this.chartTeachers.TabIndex = 14;
             this.chartTeachers.Text = "chart1";
@@ -380,9 +380,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(145, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 19);
+            this.label1.Size = new System.Drawing.Size(83, 19);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Students";
+            this.label1.Text = "Teachers";
             // 
             // label2
             // 
@@ -391,14 +391,14 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(506, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 19);
+            this.label2.Size = new System.Drawing.Size(81, 19);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Teachers";
+            this.label2.Text = "Students";
             // 
             // pBoxCont
             // 
             this.pBoxCont.BackColor = System.Drawing.Color.Transparent;
-            this.pBoxCont.FillColor = System.Drawing.Color.Gainsboro;
+            this.pBoxCont.FillColor = System.Drawing.Color.Transparent;
             this.pBoxCont.ImageRotate = 0F;
             this.pBoxCont.Location = new System.Drawing.Point(140, 94);
             this.pBoxCont.Name = "pBoxCont";

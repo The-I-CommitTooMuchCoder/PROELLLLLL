@@ -37,12 +37,12 @@
             this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.cbShowPass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -99,7 +99,6 @@
             this.btnLogin.FillColor = System.Drawing.Color.Transparent;
             this.btnLogin.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.IndicateFocus = true;
             this.btnLogin.Location = new System.Drawing.Point(109, 265);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(180, 45);
@@ -206,6 +205,29 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(390, 462);
             this.guna2CustomGradientPanel1.TabIndex = 76;
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Animated = true;
+            this.btnRegister.AutoRoundedCorners = true;
+            this.btnRegister.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegister.BorderThickness = 1;
+            this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegister.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRegister.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRegister.FillColor = System.Drawing.Color.Transparent;
+            this.btnRegister.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.IndicateFocus = true;
+            this.btnRegister.Location = new System.Drawing.Point(109, 405);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(180, 45);
+            this.btnRegister.TabIndex = 81;
+            this.btnRegister.Text = "REGISTER";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.MouseLeave += new System.EventHandler(this.btnRegister_MouseLeave);
+            this.btnRegister.MouseHover += new System.EventHandler(this.btnRegister_MouseHover);
+            // 
             // cbShowPass
             // 
             this.cbShowPass.AutoSize = true;
@@ -271,38 +293,15 @@
             this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
             this.guna2Separator1.TabIndex = 77;
             // 
-            // btnRegister
-            // 
-            this.btnRegister.Animated = true;
-            this.btnRegister.AutoRoundedCorners = true;
-            this.btnRegister.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegister.BorderThickness = 1;
-            this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegister.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRegister.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRegister.FillColor = System.Drawing.Color.Transparent;
-            this.btnRegister.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.IndicateFocus = true;
-            this.btnRegister.Location = new System.Drawing.Point(109, 405);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(180, 45);
-            this.btnRegister.TabIndex = 81;
-            this.btnRegister.Text = "REGISTER";
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            this.btnRegister.MouseLeave += new System.EventHandler(this.btnRegister_MouseLeave);
-            this.btnRegister.MouseHover += new System.EventHandler(this.btnRegister_MouseHover);
-            // 
-            // LOGIN
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(765, 462);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LOGIN";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.guna2CustomGradientPanel1.ResumeLayout(false);

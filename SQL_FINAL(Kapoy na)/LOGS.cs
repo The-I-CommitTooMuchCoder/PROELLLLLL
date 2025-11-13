@@ -18,6 +18,10 @@ namespace SQL_FINAL_Kapoy_na_
         {
             InitializeComponent();
         }
+        bool isHidden = false;
+        int shownX;
+        int hiddenX;
+        int slideSpeed = 12; // pixels per tick (adjust for smoothness)
 
         string connectionString =ConnectionString.conn;
         private void Student()
@@ -40,7 +44,7 @@ namespace SQL_FINAL_Kapoy_na_
             this.Hide();
         }
 
-        private void Logs()
+        private void OpenLogs()
         {
             Logs lOGS = new Logs();
             lOGS.Show();
@@ -49,18 +53,39 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void Logout()
         {
-            UserSession.FirstName = null;
-            UserSession.LastName = null;
-            UserSession.ProfilePath = null;
+            // Show a message box and get the user's choice
+            DialogResult result = MessageBox.Show(
+                "Are you really sure you want to log out?",
+                "Notice",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information
+            );
 
-            Login login = new Login();
-            login.Show();
-            this.Hide();
+            // Check the result
+            if (result == DialogResult.OK)
+            {
+                // Clear user session
+                UserSession.FirstName = null;
+                UserSession.LastName = null;
+                UserSession.ProfilePath = null;
+
+                // Show login form
+                Login login = new Login();
+                login.Show();
+
+                // Hide current form
+                this.Hide();
+            }
+            // else do nothing (user cancelled)
         }
 
         private void LOGS_Load(object sender, EventArgs e)
         {
             lblName.Text = $"{UserSession.FirstName} {UserSession.LastName}";
+                
+            shownX = pDash.Left;                // visible position
+            hiddenX = pDash.Left - 130;  // completely hidden off-screen
+            timerSideBar.Interval = 10;              // controls animation speed
 
             if (!string.IsNullOrEmpty(UserSession.ProfilePath) && File.Exists(UserSession.ProfilePath))
             {
@@ -123,7 +148,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void btnLogsD_Click(object sender, EventArgs e)
         {
-            Logs();
+            OpenLogs();
         }
 
         private void btnLogOutD_Click(object sender, EventArgs e)
@@ -148,12 +173,52 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void pBoxLogs_Click(object sender, EventArgs e)
         {
-            Logs();
+            OpenLogs();
         }
 
         private void pBoxExit_Click(object sender, EventArgs e)
         {
             Logout();
+        }
+
+        private void btnToggle_Click(object sender, EventArgs e)
+        {
+            timerSideBar.Start();
+        }
+
+        private void timerSideBar_Tick(object sender, EventArgs e)
+        {
+            if (isHidden)
+            {
+                // Slide in (move right)
+                pDash.Left += slideSpeed;
+
+                if (pDash.Left >= shownX)
+                {
+                    pDash.Left = shownX;
+                    timerSideBar.Stop();
+                    isHidden = false;
+                }
+            }
+            else
+            {
+                // Slide out (move left)
+                pDash.Left -= slideSpeed;
+
+                if (pDash.Left <= hiddenX)
+                {
+                    pDash.Left = hiddenX;
+                    timerSideBar.Stop();
+                    isHidden = true;
+                }
+            }
+        }
+
+        private void btndashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard dsh = new Dashboard();
+            dsh.Show();
+            this.Hide();
         }
     }
 }

@@ -26,39 +26,59 @@ namespace SQL_FINAL_Kapoy_na_
         int shownX;
         int hiddenX;
         int slideSpeed = 12; // pixels per tick (adjust for smoothness)
-        private void ExportToWord(string columnName)
+        private void ExportToWord()
         {
             try
             {
+                // Create Word app & document
                 Word.Application wordApp = new Word.Application();
                 Word.Document doc = wordApp.Documents.Add();
 
                 // Add title
                 Word.Paragraph header = doc.Content.Paragraphs.Add();
-                header.Range.Text = $"Data from column: {columnName}";
+                header.Range.Text = "Active Students";
                 header.Range.Font.Bold = 1;
-                header.Range.Font.Size = 14;
+                header.Range.Font.Size = 11;
                 header.Range.InsertParagraphAfter();
 
-                // Add table with 1 column
-                int rowCount = dgvStudents.Rows.Count - 1; // minus new row
-                Word.Table table = doc.Tables.Add(header.Range, rowCount + 1, 1);
+                // Get visible (bound) columns count
+                int colCount = dgvStudents.Columns.Count;
+
+                // Filter only active rows
+                var activeRows = dgvStudents.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => !r.IsNewRow && Convert.ToBoolean(r.Cells["Active"].Value) == true)
+                    .ToList();
+
+                if (activeRows.Count == 0)
+                {
+                    MessageBox.Show("No active students found to export.");
+                    return;
+                }
+
+                // Add table (rows + header)
+                Word.Table table = doc.Tables.Add(header.Range, activeRows.Count + 1, colCount);
                 table.Borders.Enable = 1;
 
                 // Header row
-                table.Cell(1, 1).Range.Text = columnName;
-                table.Cell(1, 1).Range.Bold = 1;
-
-                // Fill rows
-                int rowIndex = 2;
-                foreach (DataGridViewRow row in dgvStudents.Rows)
+                for (int c = 0; c < colCount; c++)
                 {
-                    if (row.IsNewRow) continue;
+                    table.Cell(1, c + 1).Range.Text = dgvStudents.Columns[c].HeaderText;
+                    table.Cell(1, c + 1).Range.Bold = 1;
+                }
 
-                    table.Cell(rowIndex, 1).Range.Text = row.Cells[columnName].Value?.ToString();
+                // Fill rows with data
+                int rowIndex = 2;
+                foreach (DataGridViewRow row in activeRows)
+                {
+                    for (int c = 0; c < colCount; c++)
+                    {
+                        table.Cell(rowIndex, c + 1).Range.Text = row.Cells[c].Value?.ToString() ?? "";
+                    }
                     rowIndex++;
                 }
 
+                // Show Word document
                 wordApp.Visible = true;
             }
             catch (Exception ex)
@@ -89,21 +109,30 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void Logout()
         {
-            MessageBox.Show("Are you really sure to log out?", "Notice", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (DialogResult == DialogResult.OK)
+            // Show a message box and get the user's choice
+            DialogResult result = MessageBox.Show(
+                "Are you really sure you want to log out?",
+                "Notice",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information
+            );
+
+            // Check the result
+            if (result == DialogResult.OK)
             {
+                // Clear user session
                 UserSession.FirstName = null;
                 UserSession.LastName = null;
                 UserSession.ProfilePath = null;
 
+                // Show login form
                 Login login = new Login();
                 login.Show();
+
+                // Hide current form
                 this.Hide();
             }
-            else
-            {
-
-            }
+            // else do nothing (user cancelled)
         }
 
         private void Student()
@@ -260,7 +289,7 @@ namespace SQL_FINAL_Kapoy_na_
                 SqlCommand cmd = new SqlCommand("F_CountActS", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 int count = (int)cmd.ExecuteScalar();
-                lblActstud.Text = $"Active Students: {count}";
+                lblActSub.Text = $"Active Students: {count}";
             }
         }
 
@@ -350,8 +379,7 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            string selectedColumn = dgvStudents.SelectedCells[0].OwningColumn.Name;
-            ExportToWord(selectedColumn);
+            ExportToWord();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -390,6 +418,18 @@ namespace SQL_FINAL_Kapoy_na_
         private void btnToggle_Click(object sender, EventArgs e)
         {
             timerSideBar.Start();
+        }
+
+        private void btndashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard dsh = new Dashboard();
+            dsh.Show();
+            this.Hide();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

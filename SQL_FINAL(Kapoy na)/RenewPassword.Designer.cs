@@ -321,7 +321,6 @@
             this.btnRenew.FillColor = System.Drawing.Color.Transparent;
             this.btnRenew.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnRenew.ForeColor = System.Drawing.Color.White;
-            this.btnRenew.IndicateFocus = true;
             this.btnRenew.Location = new System.Drawing.Point(102, 231);
             this.btnRenew.Name = "btnRenew";
             this.btnRenew.Size = new System.Drawing.Size(180, 45);
@@ -374,7 +373,7 @@
             this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
             this.guna2Separator1.TabIndex = 77;
             // 
-            // ForgotPass
+            // RenewPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -389,7 +388,7 @@
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ForgotPass";
+            this.Name = "RenewPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgotPass";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();

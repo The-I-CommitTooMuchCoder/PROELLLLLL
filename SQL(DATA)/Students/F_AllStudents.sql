@@ -24,7 +24,6 @@ BEGIN
  SET NOCOUNT ON;
     SELECT StudentID, FirstName, LastName, Gender, Course, Department, TermLevel, Active
     FROM Students
-    WHERE Active = 1 
     ORDER BY StudentID DESC;
 END
 GO

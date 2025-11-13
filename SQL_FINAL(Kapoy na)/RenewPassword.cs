@@ -17,7 +17,7 @@ namespace SQL_FINAL_Kapoy_na_
         {
             InitializeComponent();
         }
-        string connectionString = @"Data Source=DESKTOP-IBHAJPM\SQLEXPRESS;Initial Catalog=FINAL_DB;Integrated Security=True";
+        string connectionString = ConnectionString.conn;
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -33,39 +33,58 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void btnRenew_Click_1(object sender, EventArgs e)
         {
-            string user = txtUser.Text.Trim();
-            string newPass = txtPass.Text.Trim();
+            string user = txtUsername.Text.Trim();
+            string newPass = txtNewPass.Text.Trim();
 
-            if (txtUser.Text == "" || txtPass.Text == "")
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(newPass))
             {
-                MessageBox.Show("Please fill in all fields.", "Missing Information");
+                MessageBox.Show("Please fill in all fields.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("F_ResetPass", con);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    using (SqlCommand cmd = new SqlCommand("F_ResetPass", con))
+                    {
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    // Add parameters
-                    cmd.Parameters.AddWithValue("@Username", txtUser.Text);
-                    cmd.Parameters.AddWithValue("@NewPassword", txtPass.Text);
+                        // Input parameters
+                        cmd.Parameters.Add("@Username", System.Data.SqlDbType.NVarChar, 50).Value = user;
+                        cmd.Parameters.Add("@NewPassword", System.Data.SqlDbType.NVarChar, 100).Value = newPass;
 
-                    // Execute
-                    cmd.ExecuteNonQuery();
+                        // Output parameter
+                        SqlParameter resultParam = new SqlParameter("@Result", System.Data.SqlDbType.Int);
+                        resultParam.Direction = System.Data.ParameterDirection.Output;
+                        cmd.Parameters.Add(resultParam);
 
-                    MessageBox.Show("Password reset successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cmd.ExecuteNonQuery();
 
-                    // Back to Login Form
-                    Login lOGIN = new Login();
-                    lOGIN.Show();
-                    this.Hide();
+                        int result = (int)cmd.Parameters["@Result"].Value;
+
+                        if (result == 1)
+                        {
+                            MessageBox.Show("Password reset successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            Login loginForm = new Login();
+                            loginForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid username. Please try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Database Error");
+                    MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unexpected Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

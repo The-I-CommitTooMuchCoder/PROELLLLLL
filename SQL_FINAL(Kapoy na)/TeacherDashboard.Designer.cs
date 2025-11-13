@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherDashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblActTeac = new System.Windows.Forms.Label();
@@ -49,7 +49,6 @@
             this.pBoxSubject = new System.Windows.Forms.PictureBox();
             this.ppBoxTeacher = new System.Windows.Forms.PictureBox();
             this.pBoxStudent = new System.Windows.Forms.PictureBox();
-            this.btndashboard = new System.Windows.Forms.Button();
             this.picProfile = new System.Windows.Forms.PictureBox();
             this.dgvTeachers = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -60,6 +59,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblName = new System.Windows.Forms.Label();
             this.timerSideBar = new System.Windows.Forms.Timer(this.components);
+            this.btndashboard = new System.Windows.Forms.Button();
             this.pDash.SuspendLayout();
             this.pIcons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxExit)).BeginInit();
@@ -86,7 +86,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(160, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 38);
@@ -96,9 +96,9 @@
             // lblActTeac
             // 
             this.lblActTeac.AutoSize = true;
-            this.lblActTeac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(62)))));
+            this.lblActTeac.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblActTeac.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblActTeac.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblActTeac.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblActTeac.Location = new System.Drawing.Point(163, 68);
             this.lblActTeac.Name = "lblActTeac";
             this.lblActTeac.Size = new System.Drawing.Size(54, 19);
@@ -188,7 +188,7 @@
             this.btnTeacherD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTeacherD.FillColor = System.Drawing.Color.Transparent;
             this.btnTeacherD.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnTeacherD.ForeColor = System.Drawing.Color.White;
+            this.btnTeacherD.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnTeacherD.Location = new System.Drawing.Point(3, 228);
             this.btnTeacherD.Name = "btnTeacherD";
             this.btnTeacherD.Size = new System.Drawing.Size(134, 51);
@@ -214,6 +214,7 @@
             this.btnStudentD.TabIndex = 25;
             this.btnStudentD.Text = "STUDENT";
             this.btnStudentD.UseTransparentBackground = true;
+            this.btnStudentD.Click += new System.EventHandler(this.btnStudentD_Click);
             // 
             // pIcons
             // 
@@ -305,20 +306,6 @@
             this.pBoxStudent.TabStop = false;
             this.pBoxStudent.Click += new System.EventHandler(this.pBoxStudent_Click);
             // 
-            // btndashboard
-            // 
-            this.btndashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btndashboard.FlatAppearance.BorderSize = 0;
-            this.btndashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btndashboard.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndashboard.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btndashboard.Location = new System.Drawing.Point(13, 21);
-            this.btndashboard.Name = "btndashboard";
-            this.btndashboard.Size = new System.Drawing.Size(115, 28);
-            this.btndashboard.TabIndex = 17;
-            this.btndashboard.Text = "DASHBOARD";
-            this.btndashboard.UseVisualStyleBackColor = true;
-            // 
             // picProfile
             // 
             this.picProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(62)))));
@@ -331,24 +318,24 @@
             // 
             // dgvTeachers
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvTeachers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeachers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTeachers.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.dgvTeachers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeachers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTeachers.DefaultCellStyle = dataGridViewCellStyle21;
             this.dgvTeachers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTeachers.Location = new System.Drawing.Point(150, 94);
             this.dgvTeachers.Name = "dgvTeachers";
@@ -491,7 +478,22 @@
             // 
             this.timerSideBar.Tick += new System.EventHandler(this.timerSideBar_Tick);
             // 
-            // TeacherDash
+            // btndashboard
+            // 
+            this.btndashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btndashboard.FlatAppearance.BorderSize = 0;
+            this.btndashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndashboard.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btndashboard.Location = new System.Drawing.Point(13, 21);
+            this.btndashboard.Name = "btndashboard";
+            this.btndashboard.Size = new System.Drawing.Size(115, 28);
+            this.btndashboard.TabIndex = 17;
+            this.btndashboard.Text = "DASHBOARD";
+            this.btndashboard.UseVisualStyleBackColor = true;
+            this.btndashboard.Click += new System.EventHandler(this.btndashboard_Click);
+            // 
+            // TeacherDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -508,7 +510,7 @@
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.guna2PictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TeacherDash";
+            this.Name = "TeacherDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TeacherDash";
             this.Load += new System.EventHandler(this.TeacherDash_Load);
@@ -545,7 +547,6 @@
         private System.Windows.Forms.PictureBox pBoxSubject;
         private System.Windows.Forms.PictureBox ppBoxTeacher;
         private System.Windows.Forms.PictureBox pBoxStudent;
-        private System.Windows.Forms.Button btndashboard;
         private System.Windows.Forms.PictureBox picProfile;
         private Guna.UI2.WinForms.Guna2DataGridView dgvTeachers;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
@@ -556,5 +557,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Timer timerSideBar;
+        private System.Windows.Forms.Button btndashboard;
     }
 }

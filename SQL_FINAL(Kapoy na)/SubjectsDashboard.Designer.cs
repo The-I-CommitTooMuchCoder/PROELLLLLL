@@ -58,7 +58,7 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblSubS = new Guna.UI2.WinForms.Guna2Panel();
             this.lblName = new System.Windows.Forms.Label();
             this.pDash.SuspendLayout();
             this.pIcons.SuspendLayout();
@@ -70,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
+            this.lblSubS.SuspendLayout();
             this.SuspendLayout();
             // 
             // pDash
@@ -137,7 +137,7 @@
             this.btnSubjectD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSubjectD.FillColor = System.Drawing.Color.Transparent;
             this.btnSubjectD.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnSubjectD.ForeColor = System.Drawing.Color.White;
+            this.btnSubjectD.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnSubjectD.Location = new System.Drawing.Point(3, 296);
             this.btnSubjectD.Name = "btnSubjectD";
             this.btnSubjectD.Size = new System.Drawing.Size(134, 51);
@@ -284,13 +284,14 @@
             this.btndashboard.FlatAppearance.BorderSize = 0;
             this.btndashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndashboard.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndashboard.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btndashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btndashboard.Location = new System.Drawing.Point(13, 21);
             this.btndashboard.Name = "btndashboard";
             this.btndashboard.Size = new System.Drawing.Size(115, 28);
             this.btndashboard.TabIndex = 17;
             this.btndashboard.Text = "DASHBOARD";
             this.btndashboard.UseVisualStyleBackColor = true;
+            this.btndashboard.Click += new System.EventHandler(this.btndashboard_Click);
             // 
             // picProfile
             // 
@@ -473,14 +474,14 @@
             this.btnDelete.Text = "DELETE";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // guna2Panel2
+            // lblSubS
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.Controls.Add(this.lblName);
-            this.guna2Panel2.Location = new System.Drawing.Point(698, 12);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(202, 31);
-            this.guna2Panel2.TabIndex = 33;
+            this.lblSubS.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubS.Controls.Add(this.lblName);
+            this.lblSubS.Location = new System.Drawing.Point(698, 12);
+            this.lblSubS.Name = "lblSubS";
+            this.lblSubS.Size = new System.Drawing.Size(202, 31);
+            this.lblSubS.TabIndex = 33;
             // 
             // lblName
             // 
@@ -497,12 +498,12 @@
             this.lblName.Text = "W";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Subjects
+            // SubjectsDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 567);
-            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.lblSubS);
             this.Controls.Add(this.pDash);
             this.Controls.Add(this.dgvSubjects);
             this.Controls.Add(this.lblActSub);
@@ -514,7 +515,7 @@
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.guna2PictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Subjects";
+            this.Name = "SubjectsDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Subjects";
             this.Load += new System.EventHandler(this.Subjects_Load);
@@ -528,7 +529,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
+            this.lblSubS.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,7 +561,7 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel lblSubS;
         private System.Windows.Forms.Label lblName;
     }
 }

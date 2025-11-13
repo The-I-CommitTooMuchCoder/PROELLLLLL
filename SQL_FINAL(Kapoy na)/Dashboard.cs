@@ -23,21 +23,30 @@ namespace SQL_FINAL_Kapoy_na_
 
         private void Logout()
         {
-            MessageBox.Show("Are you really sure to log out?", "Notice", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (DialogResult == DialogResult.OK) 
+            // Show a message box and get the user's choice
+            DialogResult result = MessageBox.Show(
+                "Are you really sure you want to log out?",
+                "Notice",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information
+            );
+
+            // Check the result
+            if (result == DialogResult.OK)
             {
+                // Clear user session
                 UserSession.FirstName = null;
                 UserSession.LastName = null;
                 UserSession.ProfilePath = null;
 
+                // Show login form
                 Login login = new Login();
                 login.Show();
+
+                // Hide current form
                 this.Hide();
             }
-            else
-            {
-
-            }
+            // else do nothing (user cancelled)
         }
 
         private void Student()

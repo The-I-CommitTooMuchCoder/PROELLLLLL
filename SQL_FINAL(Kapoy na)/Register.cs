@@ -69,7 +69,7 @@ namespace SQL_FINAL_Kapoy_na_
                     cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
                     cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@Username", txtFirstName.Text);
+                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
                     cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
                     if (string.IsNullOrEmpty(selectedImagePath))
                     {
@@ -186,6 +186,21 @@ namespace SQL_FINAL_Kapoy_na_
         {
             btnClear.ForeColor = defaultClearForeColor;
             btnClear.FillColor = defaultClearFillColor;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUsername.Clear();
+            txtPhone.Clear();
+            txtPassword.Clear();
+            txtEmail.Clear();
+            txtLastName.Clear();
+            txtFirstName.Clear();
+            txtAddress.Clear();
+            txtAge.Clear();
+            cbShowPass.CheckedState = default;
+            cbShowPass.Checked = default;
+
         }
     }
 }
